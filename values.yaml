@@ -8,8 +8,7 @@
 # Declare variables to be passed into your templates.
 
 global:
-  default:
-    nodeSelector: {}
+  nodeSelector: {}
 
 # Enable the app
 enabled: true
@@ -18,7 +17,7 @@ replicaCount: 1
 
 image:
   registry: 835626702473.dkr.ecr.us-east-1.amazonaws.com
-  repository: bigid/bigid-app
+  repository: bigid/myApp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
@@ -64,7 +63,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 8686
+  port: 8080
 
 ## Configure extra options for liveness probe
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
@@ -82,7 +81,7 @@ livenessProbe:
   initialDelaySeconds: 15
   periodSeconds: 10
   timeoutSeconds: 5
-  failureThreshold: 6
+  failureThreshold: 3
   successThreshold: 1
 ## Configure extra options for readiness probe
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
@@ -100,7 +99,7 @@ readinessProbe:
   initialDelaySeconds: 15
   periodSeconds: 10
   timeoutSeconds: 5
-  failureThreshold: 6
+  failureThreshold: 3
   successThreshold: 1
 
 resources:

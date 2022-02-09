@@ -18,5 +18,5 @@ To install the chart with the release name `myApp`:
 
 ## Rollback the Chart
 
-```$ helm rollback myApp [REVISION]```
+```$ helm rollback myApp [REVISION] --namespace [NAMESPACE]```
 

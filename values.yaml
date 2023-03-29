@@ -8,6 +8,8 @@
 # Declare variables to be passed into your templates.
 
 global:
+  image:
+    registry: "656782941097.dkr.ecr.us-east-1.amazonaws.com"
   nodeSelector: {}
 
 # Enable the app
